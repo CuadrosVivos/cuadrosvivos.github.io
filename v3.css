@@ -27,3 +27,22 @@
  .product-layout{gap:20px;padding-top:48px}.product-gallery>img{height:24svh;min-height:130px;max-height:210px;aspect-ratio:auto}.thumbnails{margin-top:10px}.thumbnails button{flex-basis:51px}.thumbnails img{height:40px}.product-gallery>.image-caption{display:none}.product-information h2{font-size:29px;margin-bottom:12px}.product-information>.eyebrow{font-size:8px;margin-bottom:9px}.product-information .availability{margin:11px 0}.product-information #product-description{font-size:12px}.product-information .price-display{font-size:24px;padding:8px 0 20px}.hero-slides{left:6%;bottom:78px}.workshop-callout{padding:30px 6%;flex-direction:column;align-items:start}.available-empty{padding:25px}.available-empty h3{font-size:27px}.custom-visual.has-photo{aspect-ratio:1.4}.photo-view{padding-inline:15px}
 }
 @media(prefers-reduced-motion:reduce){.hero>img,.workshop-media>img{animation:none}#pause-hero{display:none}.modality-photo img,.community .product-card img{transition:none}}
+
+/* Borrador 4: alternating sections, open hero framing and natural photo movement. */
+main>section:nth-of-type(odd){background-color:#191d17}
+main>section:nth-of-type(even){background-color:#282e24}
+.hero{background:#252c20;min-height:760px}
+.hero>img{object-fit:contain;object-position:72% center;animation:gentle-v4 18s ease-in-out infinite alternate}
+.hero-shade{background:linear-gradient(90deg,rgba(12,19,10,.72),rgba(15,22,12,.25) 65%,rgba(15,22,12,.08))}
+@keyframes gentle-v4{from{transform:scale(1)}to{transform:scale(1.018)}}
+.modality-photo img,.custom-visual.has-photo img{animation:gentle-v4 17s ease-in-out infinite alternate}
+.product-gallery>img{object-fit:contain;background:#171b14}
+.portrait-placeholder{overflow:hidden}.portrait-placeholder img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.contact-details a{display:block;overflow-wrap:anywhere;margin:10px 0;color:var(--cream)}
+.send-options{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}.color-option{padding:12px}
+.creation-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:9px}.creation-grid h3{font-size:25px;margin-top:16px}
+@media(max-width:760px){.hero{min-height:760px}.hero>img{object-fit:contain;object-position:center 20%;height:65%;top:0}.hero-shade{background:linear-gradient(0deg,#192016 12%,rgba(20,28,17,.65) 35%,rgba(20,28,17,.06) 78%)}.hero-content{padding-top:330px}.portrait-placeholder img{max-height:450px}}
+@media(prefers-reduced-motion:reduce){.hero>img,.modality-photo img,.custom-visual.has-photo img{animation:none}}
+.motion-paused .modality-photo img,.motion-paused .custom-visual.has-photo img{animation-play-state:paused}
+
+.slide-controls{flex-wrap:wrap;max-width:80%;gap:6px}.slide-controls button{max-width:22px}
