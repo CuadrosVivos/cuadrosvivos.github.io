@@ -46,3 +46,49 @@ main>section:nth-of-type(even){background-color:#282e24}
 .motion-paused .modality-photo img,.motion-paused .custom-visual.has-photo img{animation-play-state:paused}
 
 .slide-controls{flex-wrap:wrap;max-width:80%;gap:6px}.slide-controls button{max-width:22px}
+
+/* Borrador 5: full-bleed cover and one continuous workshop background. */
+.hero{min-height:680px;height:calc(100svh - 98px);max-height:900px}
+.hero>img{inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.hero-content{padding:70px 7%;max-width:1100px}
+.hero-shade{background:linear-gradient(90deg,rgba(14,23,14,.76),rgba(19,30,17,.3) 70%),linear-gradient(0deg,rgba(15,23,13,.45),transparent 45%)}
+.workshop-section{position:relative;isolation:isolate;overflow:hidden;background:#202b1b!important}
+.workshop-backdrop{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.workshop-backdrop img{width:100%;height:100%;object-fit:cover;object-position:center 45%;animation:gentle-v4 18s ease-in-out infinite alternate;filter:saturate(.85)}
+.workshop-section:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,10,.83),rgba(12,23,12,.55)),linear-gradient(0deg,rgba(10,18,10,.86),transparent);z-index:-1}
+.workshop-media{height:auto;min-height:360px;background:transparent}
+.workshop-media>img,.workshop-overlay{display:none}
+.workshop-copy{position:relative;padding:65px 7% 35px;max-width:1100px}
+.workshop-copy h2{max-width:700px}.workshop-copy>p:last-child{max-width:650px}
+.workshop-options{background:transparent!important;padding-top:40px;padding-bottom:75px}
+.workshop-options p,.workshop-copy p,.workshop-options small{color:#e4e5d9}
+.workshop-options article{background:rgba(16,26,15,.30);padding:25px;border-radius:8px}
+.workshop-options article+article{padding:25px;border-left:1px solid #b8c5a855}
+.workshop-gallery{margin:18px 0;font-size:13px}.slide-controls{position:relative;left:auto;bottom:auto;margin:0 7%;padding-bottom:15px}
+.motion-paused .workshop-backdrop img{animation-play-state:paused}
+@media(max-width:760px){.hero{height:730px;min-height:620px;max-height:none}.hero>img{inset:0;height:100%;object-fit:cover}.hero-content{padding:55px 6% 85px}.workshop-copy{padding:55px 6% 25px}.workshop-copy h2{font-size:41px}.workshop-media{min-height:0}.workshop-options{padding:25px 6% 55px;gap:18px}.workshop-options article+article{padding:25px;border-top:1px solid #b8c5a855;border-left:0}.workshop-backdrop img{object-position:55% center}}
+@media(prefers-reduced-motion:reduce){.workshop-backdrop img{animation:none}}
+
+/* Final workshop layout: one visual scene, brief choices, complete details on demand. */
+body:has(dialog[open]){overflow:hidden}
+.workshop-unified{padding:64px 7% 35px;min-height:690px}
+.workshop-unified .workshop-media{min-height:0;height:auto}
+.workshop-unified .workshop-copy{padding:0;max-width:760px}
+.workshop-unified .workshop-copy h2{font-size:clamp(38px,4.2vw,62px);max-width:750px}
+.workshop-unified .workshop-copy>p:last-child{margin-top:20px;max-width:570px}
+.workshop-unified .workshop-options{padding:32px 0 28px;max-width:1050px;margin:0;gap:22px;grid-template-columns:1fr 1fr}
+.workshop-unified .workshop-options article{background:rgba(13,25,14,.52);backdrop-filter:blur(5px);border:1px solid #c5d2bd44;padding:24px;border-radius:10px;display:flex;flex-direction:column;align-items:flex-start}
+.workshop-unified .workshop-options h3{font-size:30px;margin-bottom:14px}
+.workshop-title{font:inherit;text-align:left;padding:0;color:inherit}.workshop-title:hover{text-decoration:underline;text-underline-offset:5px}
+.workshop-unified .workshop-options p:not(.eyebrow){font-size:14px;line-height:1.65;max-width:410px;min-height:46px}
+.workshop-unified .workshop-options .text-link{font-size:12px;margin:16px 0}.workshop-unified .workshop-options .button{margin-top:auto;font-size:12px;padding:13px 19px}
+.workshop-bottom{display:flex;align-items:center;gap:24px;flex-wrap:wrap;max-width:1050px}
+.workshop-bottom .slide-controls{margin:0;padding:0;display:flex;gap:9px;max-width:none}
+.workshop-bottom .slide-controls button{width:30px;max-width:30px;padding:0;height:4px}
+.workshop-bottom>.button{margin-left:auto;padding:12px 22px;font-size:12px}
+#workshop-pause{font-size:11px;padding:8px}.background-paused .workshop-backdrop img{animation-play-state:paused}
+#workshop-dialog{max-width:760px}.workshop-detail h2{font-size:40px;margin-bottom:25px}.workshop-detail p{margin:18px 0;font-size:16px;line-height:1.7}.workshop-detail strong{color:var(--cream)}
+.workshop-detail-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:28px}.workshop-detail-actions .workshop-gallery{margin:0}
+.hero>img{transition:filter .8s ease;object-position:center 48%}
+@media(max-width:760px){.workshop-unified{padding:46px 6% 30px;min-height:0}.workshop-unified .workshop-copy h2{font-size:37px}.workshop-unified .workshop-copy>p:last-child{font-size:14px}.workshop-unified .workshop-options{grid-template-columns:1fr;gap:14px;padding-top:25px}.workshop-unified .workshop-options article,.workshop-unified .workshop-options article+article{padding:20px}.workshop-unified .workshop-options h3{font-size:26px}.workshop-unified .workshop-options p:not(.eyebrow){min-height:0;font-size:13px}.workshop-unified .workshop-options .text-link{margin:12px 0}.workshop-bottom{gap:16px}.workshop-bottom>.button{margin-left:0}.workshop-detail h2{font-size:31px}.workshop-detail p{font-size:14px}.workshop-detail-actions{gap:18px}}
+@media(prefers-reduced-motion:reduce){.workshop-backdrop img{animation:none}}
