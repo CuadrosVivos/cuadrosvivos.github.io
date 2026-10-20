@@ -100,3 +100,16 @@ body:has(dialog[open]){overflow:hidden}
 .workshop-copy h2,.workshop-copy p{text-shadow:0 2px 12px #10200dd9}
 #clear-selection{margin:16px 0 24px;display:block}#clear-selection[hidden]{display:none}
 .available-card .badge{max-width:90%;font-size:12px;background:#eee4d6;color:#263326;padding:8px 12px}
+
+/* Keep Ulises's face, torso, hands and frame inside the presentation photograph. */
+.about .portrait-placeholder{aspect-ratio:auto;border-radius:12px;display:block;align-self:center;overflow:hidden;background:transparent}
+.about .portrait-placeholder img{width:100%;height:auto;max-height:none;object-fit:contain;object-position:center top;animation:none;border-radius:12px}
+.catalog-tabs{scroll-margin-top:115px;display:flex;gap:10px;flex-wrap:wrap;position:sticky;top:98px;z-index:10;background:var(--bg);padding:14px 0}
+.catalog-tabs .gallery-all{font-size:12px;border-color:var(--line);color:var(--muted)}
+.gallery-return{position:sticky;top:0;z-index:8;background:#232720;border-bottom:1px solid var(--line);padding:15px 22px;font-size:12px;display:block;text-align:left;width:100%;padding-right:65px;color:var(--cream)}
+#product-dialog>.close-dialog{position:sticky;top:8px;float:right;margin-top:-45px;margin-right:10px;z-index:9}
+#product-dialog .product-layout{padding-top:25px}
+@media(max-width:760px){.catalog-tabs{top:74px;scroll-margin-top:85px;gap:8px}.catalog-tabs button{font-size:11px;padding:9px 12px}.about .portrait-placeholder{max-width:350px}.gallery-return{padding:14px 18px;padding-right:58px}#product-dialog .product-layout{padding-top:20px}}
+
+.section-head .frame-intro{max-width:500px}.guide-quick{font-size:12px;padding:11px 18px;margin-bottom:18px}.frame-intro>p{max-width:500px}
+@media(max-width:760px){.guide-quick{font-size:12px;margin-bottom:14px}}
