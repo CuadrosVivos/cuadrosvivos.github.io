@@ -92,3 +92,11 @@ body:has(dialog[open]){overflow:hidden}
 .hero>img{transition:filter .8s ease;object-position:center 48%}
 @media(max-width:760px){.workshop-unified{padding:46px 6% 30px;min-height:0}.workshop-unified .workshop-copy h2{font-size:37px}.workshop-unified .workshop-copy>p:last-child{font-size:14px}.workshop-unified .workshop-options{grid-template-columns:1fr;gap:14px;padding-top:25px}.workshop-unified .workshop-options article,.workshop-unified .workshop-options article+article{padding:20px}.workshop-unified .workshop-options h3{font-size:26px}.workshop-unified .workshop-options p:not(.eyebrow){min-height:0;font-size:13px}.workshop-unified .workshop-options .text-link{margin:12px 0}.workshop-bottom{gap:16px}.workshop-bottom>.button{margin-left:0}.workshop-detail h2{font-size:31px}.workshop-detail p{font-size:14px}.workshop-detail-actions{gap:18px}}
 @media(prefers-reduced-motion:reduce){.workshop-backdrop img{animation:none}}
+
+/* More light in the workshop photographs; the text cards keep their contrast. */
+.workshop-section:before{background:linear-gradient(90deg,rgba(10,20,10,.46),rgba(12,23,12,.12)),linear-gradient(0deg,rgba(10,18,10,.25),transparent 65%)}
+.workshop-backdrop img{filter:saturate(1.03) brightness(1.08)}
+.workshop-unified .workshop-options article{background:rgba(10,20,12,.88);backdrop-filter:blur(3px)}
+.workshop-copy h2,.workshop-copy p{text-shadow:0 2px 12px #10200dd9}
+#clear-selection{margin:16px 0 24px;display:block}#clear-selection[hidden]{display:none}
+.available-card .badge{max-width:90%;font-size:12px;background:#eee4d6;color:#263326;padding:8px 12px}
