@@ -146,3 +146,63 @@ footer{padding:20px 6%;display:flex;flex-direction:column;align-items:center;jus
 @media(max-width:760px){#talleres .workshop-copy h2{font-size:28px;line-height:1.1;margin:0 0 9px}#talleres .workshop-copy>p:last-child{font-size:12px;line-height:1.4;margin:0}#talleres .workshop-options h3{font-size:21px;line-height:1.1;margin:0 0 8px}#talleres .workshop-options article>p:not(.eyebrow){font-size:11px;line-height:1.4;margin:0}#talleres .workshop-options article>.button{font-size:10px;padding:10px 7px;margin-top:12px}#talleres .workshop-options article>.text-link{font-size:10px;margin-top:10px}#talleres .workshop-options article{justify-content:flex-start}}
 
 @media(min-width:761px){#talleres{min-height:0;padding:30px 0 12px}#talleres .workshop-copy{padding:0 6% 18px}#talleres .workshop-copy h2{font-size:40px;line-height:1.1;margin:0 0 10px}#talleres .workshop-copy>p:last-child{font-size:14px;line-height:1.4;margin:0;max-width:none}#talleres .workshop-options article{padding:16px}#talleres .workshop-options h3{font-size:26px;margin-bottom:9px}#talleres .workshop-options article>p:not(.eyebrow){font-size:13px;line-height:1.4}#talleres .workshop-options article>.button{margin-top:12px;font-size:12px;padding:11px 16px}#talleres .workshop-options article>.text-link{margin-top:12px;font-size:12px}}
+
+/* Give the content the space previously used by section headers. */
+main>.section{padding-top:26px;padding-bottom:32px}.section-head{margin-bottom:18px}.section-head .eyebrow{margin:0 0 8px}.section-head h2{font-size:clamp(30px,3.6vw,52px);line-height:1.08;margin:0 0 10px}.section-head p{margin-top:8px;line-height:1.45}.mode-entry-hint{display:none;font-size:12px;line-height:1.4;margin:0 0 12px;color:#eeeadd}.mode-entry-action{display:inline-block;font-size:11px;line-height:1.2;background:#eee8dc;color:#1c2619;border:1px solid #eee8dc;border-radius:4px;padding:7px 10px;margin-top:8px;font-weight:600}
+#talleres .workshop-options article,#talleres .workshop-options article+article{margin:0;padding:16px;border-top:1px solid #cad6bc55;align-self:stretch;justify-content:flex-start}#talleres .workshop-options article>.eyebrow{margin:0 0 8px;min-height:24px;line-height:1.4;display:flex;align-items:flex-start}#talleres .workshop-options h3{margin-top:0;min-height:1.2em}#talleres .workshop-options article>.button{margin-top:12px}
+/* Centered, constant image stages: arrows stay still on every photo. */
+.product-gallery>.stable-image-stage{width:min(100%,600px);height:360px;margin:0 auto;background:#10130f;overflow:hidden;border-radius:7px}.stable-image-stage img{display:block;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;object-fit:cover;border-radius:0}.stable-image-stage.show-whole img{object-fit:contain}.whole-image{display:block;margin:9px auto 12px;font-size:11px}.product-gallery .thumbnails{margin-top:8px}.product-gallery .image-caption{margin-top:10px}
+#photo-dialog{width:min(780px,94vw);height:min(850px,92svh);max-height:92svh;overflow:hidden}.photo-view{display:flex;flex-direction:column;height:100%;padding:52px 22px 18px;gap:10px;text-align:center;box-sizing:border-box}.photo-view>.stable-image-stage{flex:1 1 auto;min-height:0;width:100%;background:#10130f;border-radius:7px;overflow:hidden}.photo-view>.whole-image{flex:none;margin:0;align-self:center}.photo-navigation{flex:none;margin:0!important;height:44px;gap:28px}.photo-view .photo-hint{flex:none;font-size:10px;margin:0;color:#c5cbbd}.photo-view>#photo-title{flex:none;font-size:12px;line-height:1.3;margin:0}.photo-view>#photo-inquiry{flex:none;font-size:12px;margin:0 auto}.photo-view img{max-width:none;max-height:none}
+footer{display:grid;grid-template-columns:1fr auto;align-items:center;gap:3px 18px;padding:9px 6%;text-align:left}footer .brand{font-size:15px;line-height:1.2;white-space:normal}footer .brand span{display:inline;font-family:Arial,sans-serif;font-size:10px;letter-spacing:0;margin-left:7px}footer p{font-size:10px;text-align:right;margin:0}footer .site-version{grid-column:1/-1;text-align:right!important;font-size:9px!important;line-height:1;margin:0!important}
+@media(max-width:760px){
+ #cuadros,#creaciones,#personalizados,#comunidad,#contacto{padding-top:18px!important;padding-bottom:26px!important}.section-head{margin-bottom:15px}.section-head .eyebrow{margin-bottom:7px}.section-head h2{font-size:29px;line-height:1.08}.section-head p{font-size:12px;line-height:1.4}.section-head .frame-intro>p{margin-top:5px}.guide-quick{padding:8px 12px;margin-bottom:8px}.mode-entry-hint{display:block}
+ .mobile-modes .illustrated-mode{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 83px;gap:6px;min-height:116px;padding:18px 12px 12px;align-items:center}.illustrated-mode .mobile-mode-number{position:absolute;top:5px;left:10px;font-size:8px;line-height:1;color:#aebc9a}.illustrated-mode-copy{display:block}.mobile-modes .illustrated-mode strong{font-size:17px;line-height:1.1}.mobile-modes .illustrated-mode small{font-size:11px;line-height:1.3;margin-top:4px}.illustrated-mode>img{width:83px;height:83px;object-fit:contain;display:block;filter:drop-shadow(0 2px 2px #0003)}.illustrated-mode .mode-entry-action{font-size:10px;padding:6px 9px;margin-top:7px}.mobile-modes{gap:9px}
+ #talleres{padding-top:18px}#talleres .workshop-options article,#talleres .workshop-options article+article{padding:12px;margin:0}#talleres .workshop-options article>.eyebrow{min-height:24px;font-size:7px;line-height:1.35;margin:0 0 6px}#talleres .workshop-options h3{font-size:21px;line-height:1.1;min-height:47px;margin:0 0 7px}
+ .product-gallery>.stable-image-stage{height:250px;max-height:36svh;width:100%}.product-gallery>.whole-image{font-size:10px;margin:8px auto}.product-gallery .thumbnails{gap:8px}.product-gallery .thumbnails button{width:48px;height:48px}.product-information h2{font-size:29px}.product-information p{font-size:13px;line-height:1.45}#photo-dialog{width:94vw;height:88svh;max-height:88svh}.photo-view{padding:48px 12px 14px;gap:8px}.photo-navigation button{width:40px;height:40px}.photo-hint{font-size:10px}
+ footer{padding:9px 6%;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 10px}footer .brand{font-size:13px;line-height:1.2}footer .brand span{display:block;margin:2px 0 0;font-size:8px}footer p{font-size:9px;line-height:1.35}footer .site-version{font-size:8px!important}
+}
+
+@media(max-width:760px){.mobile-modes .illustrated-mode[data-mobile-mode="kit"]{grid-template-columns:minmax(0,1fr) 100px}.illustrated-mode[data-mobile-mode="kit"]>img{width:100px;height:83px}}
+
+.kit-components{display:grid;grid-template-columns:minmax(0,1fr) 8px minmax(0,1fr);gap:3px;align-items:center;width:100px;height:83px}.kit-components svg{display:block;width:100%;height:60px;overflow:hidden}.kit-text-plus{color:#eee9dd;font-family:Arial,sans-serif;font-size:13px;font-weight:400;line-height:1;text-align:center}
+
+/* Balance the apparent size of the two wider illustrations with the tall assembled frame. */
+@media(max-width:760px){.mobile-modes .illustrated-mode[data-mobile-mode="kit"]{grid-template-columns:minmax(0,1fr) 136px}.illustrated-mode[data-mobile-mode="kit"] .kit-components{width:136px;height:90px}.illustrated-mode[data-mobile-mode="kit"] .kit-components svg{height:86px}.mobile-modes .illustrated-mode[data-mobile-mode="sin-plantas"]{grid-template-columns:minmax(0,1fr) 116px}.illustrated-mode[data-mobile-mode="sin-plantas"]>img{width:116px;height:96px}}
+@media(max-width:350px){.mobile-modes .illustrated-mode[data-mobile-mode="kit"]{grid-template-columns:minmax(0,1fr) 118px}.illustrated-mode[data-mobile-mode="kit"] .kit-components{width:118px}.mobile-modes .illustrated-mode[data-mobile-mode="sin-plantas"]{grid-template-columns:minmax(0,1fr) 104px}.illustrated-mode[data-mobile-mode="sin-plantas"]>img{width:104px}}
+
+@media(max-width:760px){.mobile-modes .illustrated-mode{min-height:128px}}
+
+/* Comunidad compacta: ajuste solicitado */
+#comunidad{padding-top:18px!important;padding-bottom:18px!important}#comunidad .section-head{margin-bottom:12px}#comunidad .catalog-note{margin-top:10px;margin-bottom:0}
+/* Contacto movil: oscurecimiento continuo en toda la foto */
+@media(max-width:700px){
+ .mobile-contact-card::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(8,17,8,.96),rgba(8,17,8,.58) 60%,rgba(8,17,8,.08))}
+ .mobile-contact-copy{background:none;z-index:2}
+}
+.mobile-contact-bio{display:none}@media(max-width:700px){.mobile-contact-bio{display:block;margin-top:14px}.mobile-contact-bio p{font-size:13px;line-height:1.5;margin:0 0 10px}}
+
+/* 11.6: nearby, visible catalog navigation; preserve the existing controls. */
+.available-controls{display:flex;align-items:center;justify-content:flex-start;gap:28px;margin:12px 0 18px}
+.available-controls .catalog-tabs{margin:0;flex-wrap:wrap;gap:8px}
+.available-controls .arrows{display:flex;gap:10px;flex-shrink:0}
+.available-controls .arrows[hidden]{display:none}
+.available-controls .arrows button{width:52px;height:48px;border:1px solid #eee9dd99;border-radius:8px;background:#eee9dd;color:#191e17;font-size:29px;line-height:1}
+.available-controls .arrows button:hover{background:#dce4c7}
+.available-controls button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.creations-intro-row{display:flex;align-items:center;gap:22px;margin-top:12px}
+.creations-intro-row>p{margin:0}.creations-intro-row .button{flex-shrink:0;padding:12px 18px}
+footer{display:grid!important;grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:center;gap:2px 16px;padding-top:8px!important;padding-bottom:8px!important}
+footer>p{margin:0;text-transform:uppercase;color:#fff;font-weight:300;font-size:clamp(10px,1.05vw,16px);letter-spacing:.08em;text-align:center;white-space:nowrap}
+footer>.site-version{grid-column:1/-1;margin-top:2px!important;font-size:9px!important}
+@media(max-width:760px){
+ .available-controls{flex-wrap:wrap;gap:10px}.available-controls .catalog-tabs{width:100%}.available-controls .arrows{margin-inline:auto}
+ .available-controls .arrows button{width:52px;height:44px}
+ .creations-intro-row{gap:12px}.creations-intro-row>p{flex:1}.creations-intro-row .button{font-size:11px;padding:10px 12px}
+ .mobile-contact-card{display:flex;align-items:flex-end;min-height:350px}
+ .mobile-contact-copy{width:100%;padding:0 16px 14px;background:none;z-index:2}
+ .mobile-contact-card::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(8,17,8,.96),rgba(8,17,8,.58) 45%,rgba(8,17,8,.08))}
+ .mobile-contact-bio{display:block;margin-top:14px}.mobile-contact-bio p{font-size:13px;line-height:1.5;margin:0 0 10px}
+ footer{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:2px 8px}
+ footer .brand{font-size:12px!important}footer .brand span{font-size:8px!important}
+ footer>p{font-size:clamp(7px,1.9vw,11px);letter-spacing:.02em;text-align:right}
+}
