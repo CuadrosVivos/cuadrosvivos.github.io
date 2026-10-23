@@ -7,4 +7,4 @@ const warmedPhotos=new Map();
 function warmPhoto(src){if(!warmedPhotos.has(src)){const img=new Image();img.decoding='async';img.src=src;warmedPhotos.set(src,img.decode().then(()=>true).catch(()=>false))}return warmedPhotos.get(src)}
 function warmNext(list,index){if(list.length>1)warmPhoto(list[(index+1)%list.length])}
 
-for(const id of ['workshop-photo','workshop-backdrop-photo']){const el=document.getElementById(id);if(el){el.src=webImage(el.getAttribute('src'));el.removeAttribute('srcset')}}
+for(const id of ['workshop-photo','workshop-backdrop-photo']){const el=document.getElementById(id);if(el){const initial=el.getAttribute('src');if(initial)el.src=webImage(initial);el.removeAttribute('srcset')}}

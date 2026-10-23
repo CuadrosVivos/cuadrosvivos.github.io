@@ -206,3 +206,37 @@ footer>.site-version{grid-column:1/-1;margin-top:2px!important;font-size:9px!imp
  footer .brand{font-size:12px!important}footer .brand span{font-size:8px!important}
  footer>p{font-size:clamp(7px,1.9vw,11px);letter-spacing:.02em;text-align:right}
 }
+
+/* Approved 3B divider: a narrower golden-ochre ribbon with organic curves. */
+.section-divider{position:relative;width:100%;height:42px;overflow:hidden;background:var(--divider-from);pointer-events:none}
+.divider-curve{display:block;width:100%;height:100%}.divider-sprig{position:absolute;right:8%;top:0;width:42px;height:29px}
+main>.section-divider+section[id]{border-top:0!important}
+@media(max-width:760px){.section-divider{height:28px}.divider-sprig{width:28px;height:20px;right:7%;top:0}}
+
+/* Full photographs and compact, centered footer. */
+.stable-image-stage img{object-fit:contain!important}.whole-image{display:none!important}
+#comunidad .product-card img{object-fit:contain!important;transform:none!important;background:#191e17}
+footer{grid-template-columns:1fr!important;text-align:center!important}footer>p{grid-column:1/-1!important;text-align:center!important;font-weight:300!important;font-size:13px!important}
+@media(min-width:761px){.about .portrait-placeholder{max-width:340px;justify-self:center}.about .portrait-placeholder img{max-height:420px}}
+main>section[id]{border-top:0!important}
+.section-curve{display:block;position:absolute;bottom:0;left:0;width:100%;height:42px;pointer-events:none;z-index:8}
+
+
+
+/* Final revision 12 */
+main>section[id]{border-bottom:0!important}
+.section-curve{z-index:8}
+.hero-bottom{bottom:48px}
+.community-navigation{display:flex;align-items:center;gap:14px;margin:12px 0 0}
+.community-navigation[hidden]{display:none}
+.community-navigation label{flex:1;display:grid;gap:5px;font-size:11px;color:#eee9dd}
+.community-navigation input{width:100%;height:20px;accent-color:#bf963c;cursor:pointer}
+.community-navigation button{background:#eee9dd;color:#191e17;border-radius:8px;width:44px;height:42px;font-size:25px}
+#community-track{cursor:grab;scrollbar-width:auto;scrollbar-color:#bf963c #242e20}
+#community-track.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto;user-select:none}
+#community-track img{-webkit-user-drag:none}
+footer{display:flex!important;flex-direction:column;align-items:center;padding:14px 5%;gap:8px}
+footer>p{width:100%;font-weight:300!important;letter-spacing:1.6px;line-height:1.5}
+footer .brand{font-size:16px}
+.about .portrait-placeholder{width:100%}.about .portrait-placeholder img{width:100%;object-fit:contain}
+@media(max-width:760px){footer>p{font-size:10px!important;letter-spacing:1px}.hero-bottom{bottom:47px}}
