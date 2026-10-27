@@ -1,0 +1,14 @@
+/* Local review: readable community titles and side navigation. */
+#community-track .product-card h3{font-size:20px;line-height:1.2;margin:12px 0 0;text-align:left;color:#eee6dc}
+.creations-carousel{position:relative;min-width:0}
+.creations-carousel .creations-arrows{position:absolute;top:calc(50% - 30px);left:-12px;right:-12px;display:flex;justify-content:space-between;pointer-events:none;margin:0;z-index:4;gap:0}
+.creations-carousel .creations-arrows[hidden]{display:none}
+.creations-carousel .creations-arrows button{pointer-events:auto;width:44px;height:42px;border-radius:8px;background:#eee6dcf0;color:#191e17;font-size:25px;box-shadow:0 2px 12px #0005}
+.creations-carousel .creations-arrows button:disabled{opacity:.35;cursor:default}
+#creaciones .creation-grid{cursor:grab;padding-inline:28px;scrollbar-width:none;touch-action:pan-x pan-y}
+#creaciones .creation-grid::-webkit-scrollbar{display:none}
+#creaciones .creation-grid.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto;user-select:none}
+#creaciones .creation-grid img{-webkit-user-drag:none;user-select:none}
+@media(max-width:760px){#community-track .product-card h3{font-size:17px}.creations-carousel .creations-arrows{top:calc(50% - 25px)}}
+
+.memory-description{font-size:14px;line-height:1.6;margin-top:16px}.memory-caption{font-size:11px;margin-top:8px;color:#b9b9ac}.custom-detail-photos .custom-group-photo img{object-fit:contain!important}.custom-detail-photos article h3{font-size:27px;margin:12px 0}#photo-description{font-size:13px;line-height:1.5;margin:0;text-align:left;flex:none;max-height:24svh;overflow-y:auto;color:#deded0}#photo-description[hidden]{display:none}
