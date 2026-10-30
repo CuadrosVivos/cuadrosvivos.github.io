@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cuadrosvivostrelew.com.ar/sitemap.xml
