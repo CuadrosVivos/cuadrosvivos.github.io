@@ -19,7 +19,18 @@ let touchStart=0;$('#product-main').addEventListener('touchstart',e=>touchStart=
 function productSelection(){return {name:activeProduct.name,details:[$('#pref-mode').value,$('#pref-size').value.trim()&&'Tamaño: '+$('#pref-size').value.trim(),$('#pref-color').value.trim()&&'Color: '+$('#pref-color').value.trim()].filter(Boolean).join(' · ')}}
 function addSelection(item){if(!selection.some(x=>x.name===item.name&&x.details===item.details))selection.push(item);renderSelection()}
 function renderSelection(){$('#clear-selection').hidden=!selection.length;$('#selection-count').textContent=selection.length;$('#selection-items').innerHTML=selection.length?selection.map((s,i)=>`<div class="selection-item"><div><strong>${esc(s.name)}</strong><p>${esc(s.details||'')}</p></div><button data-remove="${i}" aria-label="Quitar ${esc(s.name)}">Quitar</button></div>`).join(''):'<p>Todavía no agregaste productos. Explorá los cuadros y sumá lo que te interese.</p>';$$('[data-remove]').forEach(b=>b.addEventListener('click',()=>{selection.splice(Number(b.dataset.remove),1);renderSelection()}));$('#selected-summary').hidden=!selection.length;$('#selected-summary').innerHTML=`<h3>Tu consulta incluye</h3><ul>${selection.map(s=>`<li>${esc(s.name)}${s.details?' — '+esc(s.details):''}</li>`).join('')}</ul><button id="edit-selection">Revisar selección</button>`;$('#edit-selection').addEventListener('click',()=>openDialog($('#selection-dialog')))}
-function goContact(){closeDialogs();location.hash='contacto';setTimeout(()=>$('#contact-form input').focus({preventScroll:true}),100)}
+function goContact(){
+  closeDialogs();
+  const panel = $('#contact-form-panel');
+  panel.open = true;
+  location.hash = 'contacto';
+  requestAnimationFrame(() => {
+    panel.scrollIntoView({block:'start'});
+    if (matchMedia('(min-width:761px)').matches) {
+      $('#contact-form input').focus({preventScroll:true});
+    }
+  });
+}
 $('#add-product').addEventListener('click',()=>{addSelection(productSelection());$('#add-product').textContent='Agregado a mi consulta ✓'});
 $('#consult-product').addEventListener('click',()=>{addSelection(productSelection());goContact()});
 $('#selection-open').addEventListener('click',()=>{renderSelection();openDialog($('#selection-dialog'))});$('#selection-contact').addEventListener('click',goContact);

@@ -92,7 +92,7 @@ const previousRenderSelection=renderSelection;
 renderSelection=function(){previousRenderSelection();directInquiry()};directInquiry();
 // Opening a prepared inquiry still offers the optional form without forcing it.
 const previousGoContact=goContact;
-goContact=function(){closeDialogs();directInquiry();location.hash='contacto';if(!contactScreen.matches)setTimeout(()=>$('#contact-form input').focus({preventScroll:true}),100)};
+goContact=function(){directInquiry();previousGoContact()};
 // Do not append an empty message label when the optional field is blank.
 $('#contact-form').addEventListener('submit',()=>{if(!$('[name=mensaje]').value.trim()){$('#message-preview').value=$('#message-preview').value.replace(/Mensaje:\s*$/,'').trim();const text=$('#message-preview').value;$('#send-whatsapp').href='https://wa.me/5491153776987?text='+encodeURIComponent(text);$('#send-email').href='mailto:ulises_adam@yahoo.com.ar?subject='+encodeURIComponent('Consulta desde Cuadros Vivos')+'&body='+encodeURIComponent(text)}});
 
