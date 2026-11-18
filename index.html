@@ -42,9 +42,14 @@
 <dialog aria-label="Galería de imágenes" id="photo-dialog"><button aria-label="Cerrar galería" class="close-dialog">×</button><div class="photo-view"><img alt="" id="photo-large"/><div class="photo-navigation"><button aria-label="Foto anterior" id="photo-prev">←</button><span id="photo-position"></span><button aria-label="Foto siguiente" id="photo-next">→</button></div><p id="photo-title"></p><button class="text-link" id="photo-inquiry">Contame tu idea ↗</button></div></dialog><dialog aria-labelledby="message-title" id="message-dialog"><button aria-label="Cerrar mensaje" class="close-dialog">×</button><div class="simple-dialog"><h2 id="message-title">Tu consulta preparada</h2><p>Revisá tu consulta y elegí WhatsApp o correo. El mensaje se envía cuando lo confirmás en la aplicación elegida.</p><textarea aria-label="Texto de tu consulta" id="message-preview" readonly="" rows="12"></textarea><div class="send-options"><a class="button light" id="send-whatsapp" rel="noopener" target="_blank">Abrir WhatsApp ↗</a><a class="button outline" id="send-email">Abrir correo ↗</a></div><button class="button light" id="copy-message">Copiar mensaje</button><p id="copy-status" role="status"></p></div></dialog>
 <dialog aria-labelledby="workshop-detail-title" id="workshop-dialog"><button aria-label="Cerrar descripción del taller" class="close-dialog">×</button><div class="simple-dialog workshop-detail"><p class="eyebrow" id="workshop-detail-kicker"></p><h2 id="workshop-detail-title"></h2><div id="workshop-detail-body"></div><div class="workshop-detail-actions"><button class="button light" id="workshop-detail-contact"></button><button class="text-link workshop-gallery">Ver galería ↗</button></div></div></dialog>
 <dialog aria-labelledby="custom-detail-title" id="custom-detail-dialog"><button aria-label="Cerrar propuesta personalizada" class="close-dialog">×</button><div class="simple-dialog"><p class="eyebrow">PERSONALIZADOS</p><h2 id="custom-detail-title"></h2><p id="custom-detail-description"></p><div class="custom-detail-photos" id="custom-detail-photos"></div><button class="button light" id="custom-detail-inquiry">Conversemos sobre tu idea ↗</button></div></dialog><script src="assets/images.js?v=17"></script><script src="assets/catalog-data.js?v=20261116"></script><script src="photos.js?v=17"></script><script src="app.js?v=20261118-contacto"></script><script src="v3.js?v=20261118-contacto"></script><script src="local16.js?v=17"></script><script src="local17.js?v=17"></script><script>
-document.getElementById('contact-form').addEventListener('submit', (event) => {
+const contactForm = document.getElementById('contact-form');
+let confirmedContactEvent;
+let pendingContact = false;
+contactForm.addEventListener('submit', (event) => {
+  if (event === confirmedContactEvent) return;
   event.preventDefault();
   event.stopImmediatePropagation();
+  if (pendingContact) return;
   const contact = event.currentTarget;
   const fields = new FormData(contact);
   const original = String(fields.get('mensaje') || '');
@@ -55,6 +60,7 @@ document.getElementById('contact-form').addEventListener('submit', (event) => {
     telefono: String(fields.get('telefono') || ''),
     mensaje: message,
     email: String(fields.get('email') || ''),
+    confirmacion: crypto.randomUUID(),
   };
   const status = document.getElementById('form-feedback');
   if (!data.nombre.trim() || !message.trim() || data.nombre.length > 150 ||
@@ -63,8 +69,13 @@ document.getElementById('contact-form').addEventListener('submit', (event) => {
     return;
   }
   const submission = document.createElement('form');
+  const frame = document.createElement('iframe');
+  frame.name = 'consulta-' + data.confirmacion;
+  frame.title = 'Procesamiento de la consulta';
+  frame.hidden = true;
+  submission.target = frame.name;
   submission.method = 'post';
-  submission.action = 'https://script.google.com/macros/s/AKfycbxUqV3Y7CNX1Ujr3YATuFo1qNAKk8w3ZH3Uc-WRnxQrFe9Q1mh38gw8NqJSvY_k_BK4bw/exec';
+  submission.action = 'https://script.google.com/macros/s/AKfycbw0c686eusQMHvCXPrYtpdXqFeMUxcW0cYwWxXC4WxAhXRM0S3wVRN4QMiCMlegwImJ/exec';
   for (const [name, value] of Object.entries(data)) {
     const input = document.createElement('input');
     input.type = 'hidden';
@@ -72,7 +83,39 @@ document.getElementById('contact-form').addEventListener('submit', (event) => {
     input.value = value;
     submission.append(input);
   }
-  document.body.append(submission);
+  const button = contact.querySelector('button[type="submit"]');
+  function finish() {
+    clearTimeout(timeout);
+    window.removeEventListener('message', confirm);
+    frame.remove();
+    submission.remove();
+    button.disabled = false;
+    pendingContact = false;
+  }
+  function confirm(event) {
+    const fromGoogle = /^https:\/\/(?:script\.google\.com|(?:[a-z0-9-]+-)?script\.googleusercontent\.com)$/.test(event.origin);
+    const reply = event.data;
+    if (!fromGoogle || reply?.type !== 'cuadros-vivos-consulta' ||
+        reply.token !== data.confirmacion || typeof reply.ok !== 'boolean') return;
+    finish();
+    if (!reply.ok) {
+      status.textContent = 'No pudimos enviar la consulta. Revisá los datos e intentá de nuevo.';
+      return;
+    }
+    status.textContent = '';
+    confirmedContactEvent = new Event('submit', {bubbles:true,cancelable:true});
+    contact.dispatchEvent(confirmedContactEvent);
+    confirmedContactEvent = undefined;
+  }
+  pendingContact = true;
+  button.disabled = true;
+  status.textContent = 'Enviando consulta…';
+  const timeout = setTimeout(() => {
+    finish();
+    status.textContent = 'No pudimos confirmar el envío de la consulta.';
+  }, 30000);
+  window.addEventListener('message', confirm);
+  document.body.append(frame, submission);
   submission.submit();
 }, { capture: true });
 </script>
