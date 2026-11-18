@@ -39,6 +39,39 @@
 <dialog aria-labelledby="guide-title" id="guide-dialog"><button aria-label="Cerrar instructivo" class="close-dialog">×</button><div class="guide-content"><p class="eyebrow">SOL + AGUA + AMOR</p><h2 id="guide-title">Instructivo cuadros vivos</h2><div class="guide-tabs"><button data-guide-tab="armado">Armado</button><button data-guide-tab="cuidados">Cuidados y preguntas</button></div><div id="guide-body"></div><a class="button light" href="assets/instructivo-cuadros-vivos-v8.pdf" rel="noopener" target="_blank">Ver guía completa en PDF ↗</a></div></dialog>
 <dialog aria-labelledby="selection-title" id="selection-dialog"><button aria-label="Cerrar consulta" class="close-dialog">×</button><div class="simple-dialog"><p class="eyebrow">TUS IDEAS, EN UN SOLO LUGAR</p><h2 id="selection-title">Mi consulta</h2><p>Una selección para conversar. No implica compra ni reserva.</p><div id="selection-items"></div><button class="text-link" hidden="" id="clear-selection">Limpiar selección</button><button class="button light" id="selection-contact">Continuar a Contacto ↗</button></div></dialog>
 <dialog aria-labelledby="creations-title" id="creations-dialog"><button aria-label="Cerrar catálogo" class="close-dialog">×</button><div class="simple-dialog"><p class="eyebrow">CATÁLOGO / CREACIONES</p><h2 id="creations-title">La colección está creciendo</h2><p>Próximamente encontrarás acá las fotos y los detalles de las piezas disponibles. Mientras tanto, podés contarnos qué estás buscando.</p><button class="button light" data-inquiry="Me gustaría consultar por las creaciones">Consultar por una creación ↗</button></div></dialog>
-<dialog aria-label="Galería de imágenes" id="photo-dialog"><button aria-label="Cerrar galería" class="close-dialog">×</button><div class="photo-view"><img alt="" id="photo-large"/><div class="photo-navigation"><button aria-label="Foto anterior" id="photo-prev">←</button><span id="photo-position"></span><button aria-label="Foto siguiente" id="photo-next">→</button></div><p id="photo-title"></p><button class="text-link" id="photo-inquiry">Contame tu idea ↗</button></div></dialog><dialog aria-labelledby="message-title" id="message-dialog"><button aria-label="Cerrar mensaje" class="close-dialog">×</button><div class="simple-dialog"><h2 id="message-title">Tu consulta preparada</h2><p>Revisá tu consulta y elegí WhatsApp o correo. El mensaje se envía cuando lo confirmás en la aplicación elegida.</p><textarea aria-label="Texto de tu consulta" id="message-preview" readonly="" rows="12"></textarea><div class="send-options"><a class="button light" id="send-whatsapp" rel="noopener" target="_blank">Abrir WhatsApp ↗</a><a class="button outline" id="send-email">Abrir correo ↗</a></div><button class="button light" id="copy-message">Copiar mensaje</button><p id="copy-status" role="status"></p></div></dialog>
+<dialog aria-label="Galería de imágenes" id="photo-dialog"><button aria-label="Cerrar galería" class="close-dialog">×</button><div class="photo-view"><img alt="" id="photo-large"/><div class="photo-navigation"><button aria-label="Foto anterior" id="photo-prev">←</button><span id="photo-position"></span><button aria-label="Foto siguiente" id="photo-next">→</button></div><p id="photo-title"></p><button class="text-link" id="photo-inquiry">Contame tu idea ↗</button></div></dialog><dialog aria-labelledby="message-title" id="message-dialog"><button aria-label="Cerrar mensaje" class="close-dialog">×</button><div class="simple-dialog"><h2 id="message-title">Tu consulta preparada</h2><p>Revisá tu consulta y elegí WhatsApp o correo. El mensaje se envía cuando lo confirmás en la aplicación elegida.</p><textarea aria-label="Texto de tu consulta" id="message-preview" readonly="" rows="12"></textarea><p id="whatsapp-register-note">Al continuar, Cuadros Vivos guarda tu nombre, teléfono y consulta para poder responderte, aunque después no envíes el mensaje en WhatsApp.</p><div class="send-options"><a class="button light" id="send-whatsapp" rel="noopener" target="_blank" aria-describedby="whatsapp-register-note">Registrar consulta y abrir WhatsApp ↗</a><a class="button outline" id="send-email">Abrir correo ↗</a></div><button class="button light" id="copy-message">Copiar mensaje</button><p id="copy-status" role="status"></p></div></dialog>
 <dialog aria-labelledby="workshop-detail-title" id="workshop-dialog"><button aria-label="Cerrar descripción del taller" class="close-dialog">×</button><div class="simple-dialog workshop-detail"><p class="eyebrow" id="workshop-detail-kicker"></p><h2 id="workshop-detail-title"></h2><div id="workshop-detail-body"></div><div class="workshop-detail-actions"><button class="button light" id="workshop-detail-contact"></button><button class="text-link workshop-gallery">Ver galería ↗</button></div></div></dialog>
-<dialog aria-labelledby="custom-detail-title" id="custom-detail-dialog"><button aria-label="Cerrar propuesta personalizada" class="close-dialog">×</button><div class="simple-dialog"><p class="eyebrow">PERSONALIZADOS</p><h2 id="custom-detail-title"></h2><p id="custom-detail-description"></p><div class="custom-detail-photos" id="custom-detail-photos"></div><button class="button light" id="custom-detail-inquiry">Conversemos sobre tu idea ↗</button></div></dialog><script src="assets/images.js?v=17"></script><script src="assets/catalog-data.js?v=20261116"></script><script src="photos.js?v=17"></script><script src="app.js?v=17"></script><script src="v3.js?v=17"></script><script src="local16.js?v=17"></script><script src="local17.js?v=17"></script></body></html>
+<dialog aria-labelledby="custom-detail-title" id="custom-detail-dialog"><button aria-label="Cerrar propuesta personalizada" class="close-dialog">×</button><div class="simple-dialog"><p class="eyebrow">PERSONALIZADOS</p><h2 id="custom-detail-title"></h2><p id="custom-detail-description"></p><div class="custom-detail-photos" id="custom-detail-photos"></div><button class="button light" id="custom-detail-inquiry">Conversemos sobre tu idea ↗</button></div></dialog><script src="assets/images.js?v=17"></script><script src="assets/catalog-data.js?v=20261116"></script><script src="photos.js?v=17"></script><script src="app.js?v=17"></script><script src="v3.js?v=17"></script><script src="local16.js?v=17"></script><script src="local17.js?v=17"></script><script>
+document.getElementById('send-whatsapp').addEventListener('click', (event) => {
+  event.preventDefault();
+  const contact = document.getElementById('contact-form');
+  const fields = new FormData(contact);
+  const original = String(fields.get('mensaje') || '');
+  const selected = selection.map(({name, details}) => '- ' + name + (details ? ' (' + details + ')' : ''));
+  const message = selected.length ? [original, 'Me interesa:', ...selected].join('\n') : original;
+  const data = {
+    nombre: String(fields.get('nombre') || ''),
+    telefono: String(fields.get('telefono') || ''),
+    mensaje: message,
+  };
+  const status = document.getElementById('copy-status');
+  if (!data.telefono.trim() || !message.trim() || data.nombre.length > 150 ||
+      data.telefono.length > 40 || message.length > 4000) {
+    status.textContent = 'Volvé al formulario y completá el teléfono y la consulta. Revisá que el mensaje no supere los 4000 caracteres.';
+    return;
+  }
+  const submission = document.createElement('form');
+  submission.method = 'post';
+  submission.action = 'https://script.google.com/macros/s/AKfycbwY3IFYNs_i0ovmTk3ivyl8qky7suqvhZVK95X_i1YfQ2c4lpwZTyZEGbBNJfhvyL52/exec';
+  for (const [name, value] of Object.entries(data)) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    submission.append(input);
+  }
+  document.body.append(submission);
+  submission.submit();
+});
+</script>
+</body></html>
